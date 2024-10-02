@@ -19,6 +19,16 @@ body {
     cursor: pointer;
     text-align: center;
 }
+
+.profpic {
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.whitetext {
+    color: white;
+}
 /*
 
 .section .content {
@@ -43,6 +53,15 @@ body {
 
 #summary-section {
     background-color: navy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+#summary-section h2 {
+    font-size: 2.5em;
 }
 
 #about-section {
@@ -51,6 +70,7 @@ body {
 
 #work-section {
     background-color: #d3d3d3;
+    color: black;
 }
 
 #social-section {
