@@ -9,6 +9,9 @@ body {
     background-color: #f4f4f4;
 }
 
+
+
+
 /* google fonts 
 
 .afacad-flux-<uniquifier> {
@@ -45,6 +48,10 @@ body {
 .whitetext {
     color: white;
 }
+
+
+
+
 /*
 
 .section .content {
@@ -82,14 +89,43 @@ body {
     text-decoration-thickness: 6px;
 }
 
+
+
+
 #about-section {
     background-color: #6A5ACD;
 }
+
+#about-content {
+    background-color: #6A5ACD;
+    color: white;
+}
+
+
+
 
 #work-section {
     background-color: #d3d3d3;
     color: black;
 }
+
+#work-content {
+    background-color: #d3d3d3;
+    color: black;
+}
+
+.work-child {
+    display: flex;
+    flex-direction: row;
+}
+
+.work-child > a > img {
+    height: 64px;
+}
+
+
+
+
 
 #social-section {
     background-color: black;
@@ -105,8 +141,10 @@ body {
 }
 
 #social-content > a > img {
-    height: 64px;
+    height: 45px;
+    margin: 7px;
     color: white;
+    /* https://www.svgrepo.com/vectors */
 }
 
 .filter-white{
