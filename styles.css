@@ -9,9 +9,6 @@ body {
     background-color: #f4f4f4;
 }
 
-
-
-
 /* google fonts 
 
 .afacad-flux-<uniquifier> {
@@ -32,17 +29,45 @@ body {
     padding: 1em;
 }
 
+/* Default state: h2 at the top */
 .section h2 {
     color: white;
     padding: 15px;
+    margin-bottom: 1em;
     cursor: pointer;
     text-align: center;
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transition for the position change */
 }
+
+/* Content stays hidden initially */
+.section .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    padding: 0 20px;
+    background-color: #f0f0f0;
+}
+
+/* When section is open, h2 moves to the bottom */
+.section.open h2 {
+    position: relative;
+    top: 100%; /* Move h2 below the content */
+    transform: translateY(30px); /* Adjust the vertical spacing to fine-tune positioning */
+}
+
+/* Section open state with content expanded */
+.section.open .content {
+    max-height: 200px; /* Adjust based on the content height */
+    padding: 20px;
+}
+
 
 .profpic {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 1em;
+    border: 3px solid white;
 }
 
 .whitetext {
@@ -72,7 +97,6 @@ body {
 
 
 /*
-
 .section .content {
     display: none;
     padding: 20px;
@@ -209,3 +233,47 @@ body {
 .filter-white{
     filter: invert(92%) sepia(86%) saturate(0%) hue-rotate(89deg) brightness(105%) contrast(105%);
 }
+
+/* Default filter for SVGs in "Find Me" section (white color) */
+.find-me-icon {
+    transition: all 0.3s ease, transform 0.5s ease; /* Add transform for animation */
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(100%);
+    position: relative;
+    transform: scale(1); /* Default scale */
+}
+
+/* Hover effect: change to light blue and scale up */
+.find-me-icon:hover {
+    filter: invert(79%) sepia(12%) saturate(7492%) hue-rotate(175deg) brightness(100%) contrast(102%);
+    transform: scale(1.2); /* Scale the SVG up on hover */
+}
+
+/* Hover text styling */
+.find-me-link {
+    position: relative; /* To position hover text relative to the link */
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+.find-me-link::after {
+    content: attr(data-text); /* Display text from data-text attribute */
+    position: absolute;
+    top: calc(100% + 0.5em); /* Slightly below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap; /* Keep text in a single line */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevent hover issues */
+}
+
+/* Show text on hover */
+.find-me-link:hover::after {
+    opacity: 1; /* Make text visible */
+}
+
