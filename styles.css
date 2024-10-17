@@ -69,6 +69,7 @@ body {
     border-radius: 50%;
     margin-bottom: 1em;
     border: 3px solid white;
+    filter: brightness(135%);
 }
 
 .whitetext {
@@ -127,7 +128,7 @@ body {
     padding: 1em;
 }
 
-h3 {
+h1 {
     color: white;
     margin-bottom: .5em;
     font-size: 2.9em;
@@ -145,6 +146,9 @@ h3 {
 #about-content {
     background-color: #6A5ACD;
     color: white;
+    font-size: 1.4em;
+    font-style: italic;
+    margin: 1em;
 }
 
 
@@ -173,13 +177,13 @@ h3 {
 /* Default filter for SVGs */
 .hover-effect {
     transition: all 0.3s ease;
-    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(100deg) brightness(80%) contrast(90%);
+    filter: invert(0%) brightness(0%) contrast(100%);
     position: relative; /* Set relative to position the hover text correctly */
 }
 
 /* Change SVG color on hover */
 .hover-effect:hover {
-    filter: invert(80%) sepia(50%) saturate(600%) hue-rotate(45deg) brightness(150%) contrast(100%);
+    filter: invert(66%) sepia(95%) saturate(309%) hue-rotate(96deg) brightness(96%) contrast(93%);
 }
 
 /* Hover text styling */
@@ -191,7 +195,7 @@ h3 {
 .work-child a::after {
     content: attr(data-text);
     position: absolute;
-    top: calc(100% + 0.5em); /* Position it just 0.5em below the image */
+    top: calc(100% + 0.3em); /* Position it just 0.5em below the image */
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -208,6 +212,10 @@ h3 {
 /* Show text on hover */
 .work-child a:hover::after {
     opacity: 1;
+}
+
+#figma-links {
+    margin-bottom: 1em;
 }
 
 

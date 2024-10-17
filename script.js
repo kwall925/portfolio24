@@ -36,7 +36,6 @@ window.addEventListener('load', function() {
 });
 
 // Replace with your personal access token
-const figmaToken = 'figd_v3tRWHBHqAjkmGsvLtLB9hWTL7Ug2-gSmhSlpY2V';
 
 // Replace with your Figma project ID
 const projectId = 'YOUR_PROJECT_ID';
