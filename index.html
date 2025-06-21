@@ -1,84 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenneth Wall</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kenneth Wall - Product Designer Portfolio showcasing user-centered UX/UI design projects">
+  <meta name="keywords" content="Kenneth Wall, product designer, UX design, UI design, portfolio, web design">
+  <meta name="author" content="Kenneth Wall">
+  <title>Kenneth Wall - Product Designer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #D9D9D9;
+    }
+    .nav-sticky {
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+      z-index: 50;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    .hero {
+      background-color: #F3F3F4;
+      padding: 4rem 2rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: #1f2937;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #4b5563;
+      max-width: 600px;
+      
+    }
+    .cookie-notice {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #1f2937;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      z-index: 100;
+    }
+    .cookie-notice button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      border: none;
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
 </head>
 <body>
-    <div class="section" id="summary-section">
-        <h1>Kenneth Wall</h1>
-        <img src="images/quall.jpg" class="profpic"></img>
-        <p class="whitetext"><i>UX Designer</i></p>
-        <p class="whitetext"><i>Front End Developer</i></p>
-        <div class="content" id="summary-content">
-        </div>
+  <header class="nav-sticky py-4 px-6" data-aos="fade-down">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-semibold text-gray-900">Kenneth Wall</h1>
+      <ul class="flex space-x-8">
+        <li><a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a></li>
+        <li><a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a></li>
+        <li><a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <img src="images/kenneth.jpg" style="border-radius: 50%; height: 110px; margin-top: 2em;"></img>
+    <div style="width: 30%; margin-left: 2em;">
+    <h1>Hi, I'm Ken</h1>
+    <p class="mt-4">A product designer and developer crafting intuitive and impactful digital experiences.</p>
     </div>
+  </section>
 
-    <div class="section" id="about-section">
-        <div class="content" id="about-content">
-            <p>
-                I'm a passionate Front-End Developer based in the United States.
-                I have a strong interest in design, which means that in addition to always evolving with the latest front end frameworks, I am also expanding into UX.
-                I'm committed to creating visually stunning and user-friendly websites, and I'm looking forward to exploring new opportunities to enhance my skills.
-                Being a highly curious and driven individual, there's nothing I won't attempt to learn, and no challenge that I am afraid to take on. 
-            </p>
-        </div>
-        <h2 onclick="toggleSection('about-content')">About <span class="arrow">&#x21e9;</span></h2>
+  <section id="about" class="max-w-4xl mx-auto py-16 px-6" data-aos="fade-up" >
+    <h2 class="section-title text-gray-900 mb-8">About Me</h2>
+    <div class="bg-white p-8 rounded-lg shadow-sm" style="background: #F3F3F4;">
+      <p class="text-gray-600 mb-4" style="background: #F3F3F4;">I'm a product designer and front end dev based in Chicago, passionate about creating user-centered solutions that blend functionality with beauty. My work focuses on end-to-end UX/UI design, from research and ideation to prototyping and testing.</p>
+      <p class="text-gray-600" style="background: #F3F3F4;">I thrive in collaborative environments and enjoy tackling complex problems to deliver seamless experiences. Let’s connect to bring your ideas to life!</p>
     </div>
+  </section>
 
-    <div class="section" id="work-section">
-        <div class="content" id="work-content">
-            <h3 style="font-size: 2.5em;">Development</h3>
-            <div class="work-child">
-                <a href="https://github.com/kwall925" data-text="GitHub">
-                    <img src="images/github.svg" style="height: 6.5em;" class="hover-effect"></img>
-                </a>
-                <a href="https://www.youtube.com/watch?v=qkpO45-dHlw&pp=ygUXa2VubmV0aCB3YWxsIHJhaWxzIGRlbW8%3D" data-text="Rails Demo">
-                    <img src="images/rails.svg" style="height: 6.5em;" class="hover-effect"></img>
-                </a>
-                <a href="https://drive.proton.me/..." data-text="Android">
-                    <img src="images/android.svg" style="height: 6.5em;" class="hover-effect"></img>
-                </a>
-            </div>
-            
-            <h3 style="font-size: 2.5em;">UX</h3>
-            <div class="work-child">
-
-                    <div id="figma-links">
-                        <a href="https://www.figma.com/file/TopBN3uYV6iqCeHcYSJkCM" target="_blank" data-text="Our Trip (Wireframes)">
-                            <img src="images/figma.svg" style="height: 6.5em; margin: 1em;"></img>
-                        </a>
-                        <a href="https://www.figma.com/design/4k2H9UPaWFs24PDIzWURT1/NomadPost?m=auto&t=74jnoScWmhr8ABvs-6" target="_blank" data-text="Nomad Post (Wireframes)">
-                            <img src="images/figma.svg" style="height: 6.5em; margin: 1em;"></img>
-                        </a>
-                        <a href="https://www.figma.com/design/CpXDPp9kujDNkflbXpLLpD/Community?m=auto&t=74jnoScWmhr8ABvs-6" target="_blank" data-text="First Social (Mockup)">
-                            <img src="images/figma.svg" style="height: 6.5em; margin: 1em;"></img>
-                        </a>
-                    </div>
-                                    
-            </div>
-        </div>
-        <h2 onclick="toggleSection('work-content')" style="color: black;">Work <span class="arrow">&#x21e9;</span></h2>
+  <section id="projects" class="max-w-7xl mx-auto py-16 px-6" data-aos="fade-up">
+    <h2 class="section-title text-gray-900 mb-8">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="project-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/proteinStill.png" alt="Protein Club">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Protein Club - Hi Fidelity Prototype</h3>
+        <p class="text-gray-500 text-sm mb-2">Product Designer | Full Stack Developer</p>
+        <p class="text-gray-600">Hi Fidelity prototype of a shopping site that compares prices for whey protein products.</p>
+        <a href="project-one.html" class="text-blue-600 hover:underline mt-4 inline-block">View Project</a>
+      </div>
+      <div class="project-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/arc.jpeg" alt="Project Two">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Arc Browser Usability Testing</h3>
+        <p class="text-gray-500 text-sm mb-2">Product Designer | UX/UI</p>
+        <p class="text-gray-600">Report with recommendations for the Arc Browser. Recommendations were determined by user research and usability testing.</p>
+        <a href="project-two.html" class="text-blue-600 hover:underline mt-4 inline-block">View Project</a>
+      </div>
+      <div class="project-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/amazonOne.png" style="height: 40%;" alt="Project Three">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">User Trust in Amazon One</h3>
+        <p class="text-gray-500 text-sm mb-2">UX Researcher</p>
+        <p class="text-gray-600">Comprehensive research analyzing user trust in Amazon One, a biometric payment system.</p>
+        <a href="project-three.html" class="text-blue-600 hover:underline mt-4 inline-block">View Project</a>
+      </div>
     </div>
+  </section>
 
-    <div class="section" id="social-section">
-        <div class="content" id="social-content">
-            <a href="mailto: wall.91@icloud.com" class="find-me-link" data-text="Email"><img src="images/email.svg" class="filter-white find-me-icon"></img></a>
-            <a href="https://www.facebook.com/profile.php?id=100075418443877" class="find-me-link" data-text="Facebook"><img src="images/facebook.svg" class="filter-white find-me-icon"></img></a>
-            <a href="https://app.samsungfood.com/u/wall.91" class="find-me-link" data-text="Samsung Food"><img src="images/food.svg" class="filter-white find-me-icon"></img></a>
-            <a href="https://www.instagram.com/kjwall91/" class="find-me-link" data-text="Instagram"><img src="images/instgram.svg" class="filter-white find-me-icon"></img></a>
-            <a href="https://wa.me/+19205094995" class="find-me-link" data-text="Whatsapp"><img src="images/whatsapp.svg" class="filter-white find-me-icon"></img></a>
-            <a href="#" class="find-me-link" data-text="Medium"><img src="images/medium.svg" class="filter-white find-me-icon"></img></a>
-            <a href="https://www.linkedin.com/in/kennethjwall/" class="find-me-link" data-text="LinkedIn"><img src="images/linkedin.svg" class="filter-white find-me-icon"></img></a>
-        </div>
-        <h2 onclick="toggleSection('social-content')">Find Me <span class="arrow">&#x21e9;</span></h2>
+  <section id="contact" class="max-w-4xl mx-auto py-16 px-6" data-aos="fade-up">
+    <h2 class="section-title text-gray-900 mb-8">Contact</h2>
+    <div class="bg-white p-8 rounded-lg shadow-sm">
+      <p class="text-gray-600 mb-4">Like to chat? Reach me at
+        <a href="mailto:wall.91@icloud.com" class="text-blue-600 hover:underline">wall.91@icloud.com</a>
+      </p>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <footer class="bg-white py-6 text-center border-t border-gray-200">
+    <p class="text-gray-600">© 2025 Kenneth Wall. All rights reserved.</p>
+  </footer>
+
+  <!-- Cookie Notice for GDPR Compliance 
+  <div class="cookie-notice" id="cookieNotice">
+    <p>This site uses cookies for analytics to improve your experience. By continuing, you agree to our use of cookies.</p>
+    <button onclick="acceptCookies()">Accept</button>
+  </div>
+  -->
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
 </html>
+
+<!--
+
+https://www.youtube.com/watch?v=qkpO45-dHlw&pp=ygUXa2VubmV0aCB3YWxsIHJhaWxzIGRlbW8%3D
+
+https://github.com/kwall925
+
+https://drive.proton.me/...
+
+https://www.glorialo.design/
+
+-->
