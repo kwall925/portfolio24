@@ -7,86 +7,63 @@
   <meta name="keywords" content="Kenneth Wall, product designer, UX design, UI design, portfolio, web design">
   <meta name="author" content="Kenneth Wall">
   <title>Kenneth Wall - Product Designer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { 
+            'dark-bg': '#0A0A0B',
+            'card-bg': 'rgba(255, 255, 255, 0.04)'
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #D9D9D9;
+    body { background-color: #0A0A0B; color: #E5E7EB; scroll-behavior: smooth; }
+    
+    /* 2026 Tactile Glassmorphism */
+    .bento-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
     }
-    .nav-sticky {
-      position: sticky;
-      top: 0;
-      background-color: #ffffff;
-      z-index: 50;
-      border-bottom: 1px solid #e5e7eb;
+
+    .bento-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px) scale(1.01);
     }
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 16px;
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0A0A0B; }
+    ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 10px; }
+
+    .nav-blur {
+      backdrop-filter: blur(16px);
+      background: rgba(10, 10, 11, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-    }
-    .hero {
-      background-color: #F3F3F4;
-      padding: 4rem 2rem;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-      color: #1f2937;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      color: #4b5563;
-      max-width: 600px;
-      
-    }
-    .cookie-notice {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: #1f2937;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-      z-index: 100;
-    }
-    .cookie-notice button {
-      background-color: #007bff;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      border: none;
-      margin-left: 1rem;
-      cursor: pointer;
-    }
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .section-title {
-        font-size: 2rem;
-      }
+    
+    .text-gradient {
+      background: linear-gradient(to right, #fff, #a1a1aa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
-  <!-- Google Analytics -->
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -95,104 +72,134 @@
     gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
   </script>
 </head>
-<body>
-  <header class="nav-sticky py-4 px-6" data-aos="fade-down">
+<body class="antialiased">
+
+  <header class="nav-blur fixed top-0 w-full z-50 py-4 px-6">
     <nav class="max-w-7xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-semibold text-gray-900">Kenneth Wall</h1>
-      <ul class="flex space-x-8">
-        <li><a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a></li>
-        <li><a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a></li>
-        <li><a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
+      <h1 class="text-xl font-bold tracking-tighter">KW</h1>
+      <ul class="flex space-x-6 text-sm font-medium">
+        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <img src="images/Screenshot_4.png" style="border-radius: 50%; height: 110px; margin-top: 2em;"></img>
-    <div style="width: 30%; margin-left: 2em;">
-    <h1>Hi, I'm Ken</h1>
-    <p class="mt-4">A product designer and developer crafting intuitive and impactful digital experiences.</p>
-    </div>
-  </section>
+  <main class="max-w-7xl mx-auto pt-32 px-6 pb-20">
+    
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
+      
+      <div class="bento-card md:col-span-8 p-10 flex flex-col md:flex-row items-center md:items-end gap-8" data-aos="fade-up">
+        <img src="images/kenneth.jpg" alt="Ken" class="w-32 h-32 rounded-full border-4 border-white/5 object-cover grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="text-center md:text-left">
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-gradient mb-4">Hi, I'm Ken</h1>
+          <p class="text-lg text-gray-400 max-w-lg">A product designer and developer crafting intuitive and impactful digital experiences.</p>
+        </div>
+      </div>
 
-  <section id="about" class="max-w-4xl mx-auto py-16 px-6" data-aos="fade-up" >
-    <h2 class="section-title text-gray-900 mb-8">About Me</h2>
-    <div class="bg-white p-8 rounded-lg shadow-sm" style="background: #F3F3F4;">
-      <p class="text-gray-600 mb-4" style="background: #F3F3F4;">I'm a product designer and front end dev based in Chicago, passionate about creating user-centered solutions that blend functionality with beauty. My work focuses on end-to-end UX/UI design, from research and ideation to prototyping and testing.</p>
-      <p class="text-gray-600" style="background: #F3F3F4;">I thrive in collaborative environments and enjoy tackling complex problems to deliver seamless experiences. Let’s connect to bring your ideas to life!</p>
-    </div>
-  </section>
-
-  <section id="projects" class="max-w-7xl mx-auto py-16 px-6" data-aos="fade-up">
-    <h2 class="section-title text-gray-900 mb-8">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="project-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/ownshares.png" alt="ownShares">
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">OwnShares</h3>
-        <p class="text-gray-500 text-sm mb-2">Product Designer | Full Stack Developer</p>
-        <p class="text-gray-600">A portfolio tracking app that allows individuals to manage their stocks and delivers a weekly newsletter. Built with next.js</p>
-        <a href="ownshares.html" class="text-blue-600 hover:underline mt-4 inline-block">View Project</a>
-      </div>
-      <div class="project-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/proteinStill.png" alt="Protein Club">
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Protein Club - Hi Fidelity Prototype</h3>
-        <p class="text-gray-500 text-sm mb-2">Product Designer | Full Stack Developer</p>
-        <p class="text-gray-600">Hi Fidelity prototype of a shopping site that compares prices for whey protein products.</p>
-        <a href="proteinClub.html" class="text-blue-600 hover:underline mt-4 inline-block">View Project</a>
-      </div>
-      <div class="project-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-        <img src="images/arc.jpeg" alt="Project Two">
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Arc Browser Usability Testing</h3>
-        <p class="text-gray-500 text-sm mb-2">Product Designer | UX/UI</p>
-        <p class="text-gray-600">Report with recommendations for the Arc Browser. Recommendations were determined by user research and usability testing.</p>
-        <a href="arc.html" class="text-blue-600 hover:underline mt-4 inline-block">View Project</a>
-      </div>
-      <div class="project-card bg-white p-6 rounded-lg shadow-sm transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-        <img src="images/amazonOne.png" style="height: 40%;" alt="Project Three">
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">User Trust in Amazon One</h3>
-        <p class="text-gray-500 text-sm mb-2">UX Researcher</p>
-        <p class="text-gray-600">Comprehensive research analyzing user trust in Amazon One, a biometric payment system.</p>
-        <a href="amazon.html" class="text-blue-600 hover:underline mt-4 inline-block">View Project</a>
+      <div id="about" class="bento-card md:col-span-4 p-8 flex flex-col justify-center" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-xs uppercase tracking-widest text-blue-500 font-bold mb-4">Expertise</h2>
+        <div class="space-y-3 text-sm text-gray-300">
+          <p class="flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4"></i> End-to-end UX/UI</p>
+          <p class="flex items-center gap-2"><i data-lucide="code" class="w-4 h-4"></i> Front-end Dev</p>
+          <p class="flex items-center gap-2"><i data-lucide="search" class="w-4 h-4"></i> User Research</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section id="contact" class="max-w-4xl mx-auto py-16 px-6" data-aos="fade-up">
-    <h2 class="section-title text-gray-900 mb-8">Contact</h2>
-    <div class="bg-white p-8 rounded-lg shadow-sm">
-      <p class="text-gray-600 mb-4">Like to chat? Reach me at
-        <a href="mailto:wall.91@icloud.com" class="text-blue-600 hover:underline">wall.91@icloud.com</a>
-      </p>
+    <div class="bento-card p-10 mb-20" data-aos="fade-up">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="user" class="text-blue-500"></i> About Me</h2>
+      <div class="grid md:grid-cols-2 gap-8 text-gray-400 leading-relaxed">
+        <p>I'm a product designer and front end dev based in Chicago, passionate about creating user-centered solutions that blend functionality with beauty. My work focuses on end-to-end UX/UI design, from research and ideation to prototyping and testing.</p>
+        <p>I thrive in collaborative environments and enjoy tackling complex problems to deliver seamless experiences. Let’s connect to bring your ideas to life!</p>
+      </div>
     </div>
-  </section>
 
-  <footer class="bg-white py-6 text-center border-t border-gray-200">
-    <p class="text-gray-600">© 2025 Kenneth Wall. All rights reserved.</p>
+    <div id="projects" class="mb-20">
+      <div class="flex justify-between items-end mb-8">
+        <h2 class="text-4xl font-bold tracking-tight">Projects</h2>
+        <p class="text-gray-500 text-sm">Selected Works 2024–2026</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bento-card group" data-aos="fade-up">
+          <div class="h-48 overflow-hidden bg-zinc-900">
+            <img src="images/ownshares.png" alt="ownShares" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-1">OwnShares</h3>
+            <p class="text-xs font-medium text-blue-400 mb-4">Product Designer | Full Stack Developer</p>
+            <p class="text-gray-400 text-sm mb-6 line-clamp-3">A portfolio tracking app that allows individuals to manage their stocks and delivers a weekly newsletter. Built with next.js</p>
+            <a href="ownshares.html" class="flex items-center gap-2 text-white font-semibold text-sm hover:gap-4 transition-all">
+              View Project <i data-lucide="arrow-right" class="w-4 h-4 text-blue-500"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="bento-card group" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 overflow-hidden bg-zinc-900">
+            <img src="images/proteinStill.png" alt="Protein Club" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-1">Protein Club</h3>
+            <p class="text-xs font-medium text-blue-400 mb-4">Product Designer | Full Stack Developer</p>
+            <p class="text-gray-400 text-sm mb-6 line-clamp-3">Hi Fidelity prototype of a shopping site that compares prices for whey protein products.</p>
+            <a href="proteinClub.html" class="flex items-center gap-2 text-white font-semibold text-sm hover:gap-4 transition-all">
+              View Project <i data-lucide="arrow-right" class="w-4 h-4 text-blue-500"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="bento-card group" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-48 overflow-hidden bg-zinc-900">
+            <img src="images/arc.jpeg" alt="Arc" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-1">Arc Browser Usability</h3>
+            <p class="text-xs font-medium text-blue-400 mb-4">Product Designer | UX/UI</p>
+            <p class="text-gray-400 text-sm mb-6 line-clamp-3">Report with recommendations for the Arc Browser determined by user research and usability testing.</p>
+            <a href="arc.html" class="flex items-center gap-2 text-white font-semibold text-sm hover:gap-4 transition-all">
+              View Project <i data-lucide="arrow-right" class="w-4 h-4 text-blue-500"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="bento-card group lg:col-span-3 flex flex-col md:flex-row items-center" data-aos="fade-up">
+          <div class="w-full md:w-1/3 h-64 overflow-hidden bg-zinc-900">
+            <img src="images/amazonOne.png" alt="Amazon One" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-8 w-full md:w-2/3">
+            <h3 class="text-2xl font-bold mb-1">User Trust in Amazon One</h3>
+            <p class="text-xs font-medium text-blue-400 mb-4">UX Researcher</p>
+            <p class="text-gray-400 text-base mb-6">Comprehensive research analyzing user trust in Amazon One, a biometric payment system.</p>
+            <a href="amazon.html" class="flex items-center gap-2 text-white font-semibold text-sm hover:gap-4 transition-all">
+              Read Research Paper <i data-lucide="arrow-right" class="w-4 h-4 text-blue-500"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="contact" class="bento-card p-12 text-center" data-aos="zoom-in">
+      <h2 class="text-3xl font-bold mb-4">Like to chat?</h2>
+      <p class="text-gray-400 mb-8 max-w-md mx-auto">I'm currently looking for new opportunities and collaborations. Drop me a line!</p>
+      <a href="mailto:wall.91@icloud.com" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all">
+        <i data-lucide="mail" class="w-5 h-5"></i> wall.91@icloud.com
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="py-10 text-center border-t border-white/5 text-gray-600 text-sm">
+    <p>© 2026 Kenneth Wall. Crafted for the future.</p>
   </footer>
 
-  <!-- Cookie Notice for GDPR Compliance 
-  <div class="cookie-notice" id="cookieNotice">
-    <p>This site uses cookies for analytics to improve your experience. By continuing, you agree to our use of cookies.</p>
-    <button onclick="acceptCookies()">Accept</button>
-  </div>
-  -->
-
-  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 1000, once: true });
+    lucide.createIcons(); // Initialize icons
   </script>
 </body>
 </html>
-
-<!--
-
-https://www.youtube.com/watch?v=qkpO45-dHlw&pp=ygUXa2VubmV0aCB3YWxsIHJhaWxzIGRlbW8%3D
-
-https://github.com/kwall925
-
-https://drive.proton.me/...
-
-https://www.glorialo.design/
-
--->
