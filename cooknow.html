@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Protein Club - Kenneth Wall</title>
+  <title>Cook Now Club - Kenneth Wall</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,16 +23,13 @@
 
   <style>
     body { background-color: #0A0A0B; color: #E5E7EB; overflow-x: hidden; width: 100%; }
-    
-    /* Ensure cards have distinct separation and padding on mobile */
     .bento-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
       border-radius: 20px;
-      margin-bottom: 1rem; /* Space between cards on mobile */
+      margin-bottom: 1rem;
     }
-
     .video-container {
       position: relative;
       padding-bottom: 56.25%; 
@@ -44,11 +41,21 @@
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
-
     .nav-blur {
       backdrop-filter: blur(16px);
       background: rgba(10, 10, 11, 0.9);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .btn-action {
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 0.875rem;
     }
   </style>
 </head>
@@ -58,9 +65,9 @@
     <nav class="max-w-7xl mx-auto flex flex-row justify-between items-center">
       <a href="index.html" class="text-xl font-bold tracking-tighter">KW</a>
       <ul class="flex flex-row space-x-4 md:space-x-8 text-[11px] md:text-sm font-bold uppercase tracking-widest">
-        <li><a href="index.html#about" class="text-gray-400 hover:text-white">About</a></li>
-        <li><a href="index.html#projects" class="text-white">Projects</a></li>
-        <li><a href="index.html#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#projects" class="text-white underline underline-offset-8">Projects</a></li>
+        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -71,8 +78,8 @@
       <a href="index.html#projects" class="text-[10px] font-bold text-blue-500 flex items-center gap-2 mb-3 uppercase tracking-[0.2em]">
         <i data-lucide="arrow-left" class="w-3 h-3"></i> Back
       </a>
-      <h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter leading-tight">Protein Club</h1>
-      <p class="text-sm md:text-xl text-gray-500 font-medium">Hi-Fidelity Prototype Walkthrough</p>
+      <h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter leading-tight">Cook Now Club</h1>
+      <p class="text-sm md:text-xl text-gray-500 font-medium italic">— Smart Recipe Discovery Engine</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-12 md:gap-6">
@@ -80,29 +87,29 @@
       <div class="bento-card col-span-1 md:col-span-8 p-5 md:p-8" data-aos="fade-up">
         <div class="flex items-center gap-2 mb-6 text-gray-400">
             <i data-lucide="play-circle" class="w-4 h-4 text-blue-500"></i>
-            <h3 class="text-[10px] font-bold uppercase tracking-widest">Interaction Demo</h3>
+            <h3 class="text-[10px] font-bold uppercase tracking-widest">Project Presentation</h3>
         </div>
         <div class="video-container shadow-2xl">
           <iframe 
-            src="https://www.youtube.com/watch?v=XIyDbIJB5kk&t=13s" 
-            title="Protein Club Demo" 
+            src="https://www.youtube.com/embed/qkpO45-dHlw" 
+            title="Cook Now Club Demo" 
             allowfullscreen>
           </iframe>
         </div>
       </div>
 
-      <div class="bento-card col-span-1 md:col-span-4 p-6 md:p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+      <div class="bento-card col-span-1 md:col-span-4 p-6 md:p-8 flex flex-col justify-between" data-aos="fade-up">
         <div class="space-y-8">
             <div>
-                <h3 class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-3">Role</h3>
-                <p class="text-lg font-bold leading-tight">Product Designer<br>& Full Stack Dev</p>
+                <h3 class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-3">Core Responsibilities</h3>
+                <p class="text-lg font-bold leading-tight">Front-End Developer<br>& UI Designer</p>
             </div>
             <div>
-                <h3 class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Focus Areas</h3>
+                <h3 class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Technical Focus</h3>
                 <ul class="space-y-3 text-sm font-medium">
-                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500"></i> Price Comparison</li>
-                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500"></i> Shopping UI Flow</li>
-                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500"></i> Hi-Fi Visuals</li>
+                    <li class="flex items-center gap-3"><i data-lucide="database" class="w-4 h-4 text-blue-500"></i> Tasty API Integration</li>
+                    <li class="flex items-center gap-3"><i data-lucide="layout" class="w-4 h-4 text-pink-500"></i> Visual Identity & Layout</li>
+                    <li class="flex items-center gap-3"><i data-lucide="code" class="w-4 h-4 text-green-500"></i> Ruby on Rails & JS</li>
                 </ul>
             </div>
         </div>
@@ -113,18 +120,23 @@
             <div>
                 <h3 class="text-2xl font-bold mb-4">Overview</h3>
                 <p class="text-gray-400 leading-relaxed text-base md:text-lg">
-                    This project explores the intersection of e-commerce usability and data transparency. A high-fidelity exploration of a shopping site that compares whey protein products for better consumer decision-making.
+                    Cook Now Club is a Ruby on Rails application designed to solve the "nothing to eat" problem. Users input available ingredients, and the app fetches matching recipes via the Tasty API—complete with instructions, images, and video content.
                 </p>
             </div>
-            <div class="flex flex-col justify-center">
-                <a href="https://cute-dieffenbachia-aa1b3b.netlify.app/#" target="_blank" class="mb-6 w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-white text-black font-bold hover:bg-blue-600 hover:text-white transition-all shadow-lg">
-                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                    Launch Prototype
+            <div class="flex flex-col gap-4">
+                <a href="https://www.figma.com/design/p0SiPui9LsnL5ZIy88ufQy/ForDinner?node-id=3-5&p=f&t=GX4aYlM7ZZtrrPLu-0" target="_blank" class="btn-action bg-white text-black hover:bg-pink-500 hover:text-white">
+                    <i data-lucide="figma"></i> View Figma Prototypes
                 </a>
-                <p class="text-gray-500 italic text-sm border-l-2 border-blue-500 pl-4">"The goal was to blend high-performance data fetching with a premium aesthetic."</p>
+                <a href="https://github.com/tsaiyuen/cooknow" target="_blank" class="btn-action border border-white/20 hover:border-white/50 bg-white/5 text-white">
+                    <i data-lucide="github"></i> Repository (CookNow)
+                </a>
+                <p class="text-gray-500 italic text-sm border-l-2 border-blue-500 pl-4 mt-2">
+                    "I was responsible for designing and implementing the front end—everything from color schemes to layout visuals."
+                </p>
             </div>
         </div>
       </div>
+
     </div>
   </main>
 
